@@ -1,0 +1,22 @@
+1.Write Python Program to Reverse a Given Number
+
+n=int(input("Enter the number:"))
+rev=0
+while(n!=0):
+    rem=n%10
+    rev=rev*10+rem
+    n=n//10
+print("Rverse of the no is:",rev)
+
+
+2.Python Program to Exchange the Values of Two Numbers using ^ (exclusive or operator)
+
+x=int(input("Enter the value of x:"))
+y=int(input("Enter the value of y:"))
+print("Before Exchangeing the values x=",x," and y=",y)
+x=x^y
+y=x^y
+x=x^y
+print("After Exchangeing the values x=",x," and y=",y)
+
+
