@@ -1,0 +1,67 @@
+1.Given an array arr[] of the positive integers of size N, the task is to find the largest element on the left side of each index which is smaller than the element present at that index. Note: If no such element is found then print -1.
+
+
+
+import java.util.*;        
+class Main{ 
+    static void findMaxBefore(int arr[], int n)
+    { 
+        for (int i = 0; i < n; i++) 
+        {               
+            int currAns = -1; 
+            for (int j = i - 1; j >= 0; j--)
+            { 
+                if (arr[j] > currAns && arr[j] < arr[i]) 
+                { 
+                    currAns = arr[j]; 
+                }
+            }
+            System.out.print(currAns+ " ");
+        }
+    }
+    public static void main(String[] args)
+    { 
+        int arr[] = { 4,7,6,8,5};
+        int n = arr.length;
+        findMaxBefore(arr, n);
+}
+} 
+
+
+
+
+
+2.In Bubble sort, each pass consists of comparison each element in the file with its successor (i.e. x[i] with x[i+1]) and interchanging two elements if they are not in the proper order. The array may be sorted in any pass. If the array is sorted, then remaining passes should be skipped off. Write a C Program to sort an array of integers in ascending order and display the sorted array and Number of passes performed for sorting
+#include <stdio.h>
+void main()
+{
+     int i, j, num, temp;
+    printf("Enter the value of num \n");
+    scanf("%d", &num);
+     int a[num];
+    printf("Enter the elements into tha array \n");
+    for (i = 0; i < num; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    
+    /*   Bubble sorting begins */
+    for (i = 0; i < num; i++)
+    {
+        for (j = 0; j < (num - i - 1); j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                a[j]+=a[j+1];
+                a[j+1]=a[j]-a[j+1];
+                a[j]=a[j]-a[j+1];
+                
+            }
+        }
+    }
+    printf("Sorted array is:\n");
+    for (i = 0; i < num; i++)
+    {
+        printf("%d\n", a[i]);
+    }
+}
