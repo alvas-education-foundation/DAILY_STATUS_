@@ -1,0 +1,96 @@
+1.write a java Program to print smallest and biggest possible palindrome word in a given string
+In this program, we need to find the smallest and biggest palindromic word present in the given string.
+
+string:Wow you own kayak
+
+public class Main  
+{  
+    public static boolean isPalindrome(String a)
+    {  
+        boolean flag = true;  
+        for(int i = 0; i < a.length()/2; i++){  
+            if(a.charAt(i) != a.charAt(a.length()-i-1)){  
+                flag = false;  
+                break;  
+            }  
+        }  
+        return flag;  
+    }  
+      
+    public static void main(String[] args)
+    {  
+        String string = "Wow you own kayak";  
+        String word = "", smallPalin = "", bigPalin="";  
+        String[] words = new String[100];  
+        int temp = 0, count = 0;  
+        string = string.toLowerCase();  
+        string = string + " ";  
+        for(int i = 0; i < string.length(); i++)
+        {
+            if(string.charAt(i) != ' ')
+            {  
+                word = word + string.charAt(i);  
+            }
+            else
+            {  
+            words[temp] = word;  
+            temp++;  
+            word = "";  
+            }  
+        }  
+        for(int i = 0; i< temp; i++)
+        {  
+            if(isPalindrome(words[i]))
+            {  
+                count++;  
+                if(count == 1)  
+                    smallPalin = bigPalin = words[i];  
+                else
+                {  
+                    if(smallPalin.length() > words[i].length())  
+                        smallPalin = words[i];  
+                    if(bigPalin.length() < words[i].length())  
+                        bigPalin = words[i];  
+                }  
+            }  
+        }  
+        if(count == 0)  
+            System.out.println("No palindrome is present in the given string");  
+        else
+        {  
+            System.out.println("Smallest palindromic word: " + smallPalin);  
+            System.out.println("Biggest palindromic word: " + bigPalin);  
+        }  
+    }  
+} 
+
+
+2.Print a list of first and last 5 elements where the values are square of numbers between 1 and 30 (both included)
+
+Eg: If the range of elements is 20
+Then output is:
+[1,4,9,16,25]
+[256,289,324,361,400]
+If the elements begins from 5 to 30
+Then output is:
+[25,36,49,64,81]
+[676,729,784,841,900]
+
+print("Enter the range")
+n=int(input())
+m=int(input())
+i=0
+j=0
+l1=list()
+l2=list()
+for num in range(n,m+1):
+    if i<5:
+        l1.append(num*num)
+        i+=1
+for num in range(m+1-5,m+1):
+    if j<5:
+        l2.append(num*num)
+        i+=1 
+print("Then output is:")        
+print(l1)
+print(l2)    
