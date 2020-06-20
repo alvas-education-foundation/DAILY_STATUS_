@@ -1,0 +1,103 @@
+1.Write a C Program for the following using pointer concept.
+*To swap 2 numbers using pointer and function concept, return value from user defined function
+and print the swapped values in main() function.
+#include <stdio.h>
+void swap(int *x,int *y)
+{
+    int t;
+     t   = *x;
+    *x   = *y;
+    *y   =  t;
+}
+
+int main()
+{
+    int num1,num2;
+
+    printf("Enter value of num1: ");
+    scanf("%d",&num1);
+    printf("Enter value of num2: ");
+    scanf("%d",&num2);
+    printf("Before Swapping: \nnum1= %d, num2= %d\n",num1,num2);
+
+    swap(&num1,&num2);
+    printf("After  Swapping: \nnum1= %d, num2= %d\n",num1,num2);
+
+    return 0;
+}
+
+2.Write a Java Program to find area of Square, Rectangle and Circle using Method Overloading
+
+class AreaOverload
+{
+    void area(float x)
+    {
+        float a=x*x;
+        System.out.println("Area of square is "+a+"sq units");
+    }
+    void area(float x,float y)
+    {
+        System.out.println("Area of rectangle is "+x*y+"sq units");
+    }
+    void area(double r)
+    {
+        System.out.println("Area of circle is "+3.14*r*r+"sq units");
+    }
+}
+class Main
+{
+    public static void main(String[] args){
+    AreaOverload a=new AreaOverload();
+    a.area(4);
+    a.area(2,4);
+    a.area(2.5);
+    }
+}
+
+3.Write a C Program to rotate an array by K positions.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(){    
+    int n,a[50],i,k,j,l,m,o;    
+    printf("Enter The Number Of Elements:\n");    
+    scanf("%d",&n);    
+    printf("Enter The Array Elements:\n");    
+    for(i=0;i<n;i++)    
+    {        
+        scanf("%d",&a[i]);    
+        
+    }    
+    printf("The Initial Array:\n");    
+    for(o=0;o<n;o++)    
+    {        
+        printf("%d ",a[o]);    
+        
+    }
+    printf("\n");    
+    printf("Enter The Number Of Rotations:\n");    
+    scanf("%d",&k);    
+    for(j=0;j<k;j++)    
+    {        
+        int t=a[n-1];        
+        for(l=n-2;l>=0;l--)        
+        {            
+            a[l+1]=a[l];        
+            
+        }        
+        a[0]=t;        
+        printf("After %d Rotations:",j+1);        
+        for(m=0;m<n;m++)        
+        {            
+            printf("%d ",a[m]);        
+            
+        }        
+        printf("\n");    
+        
+    }    
+    return 0;
+    
+}
+    
+    
+    
