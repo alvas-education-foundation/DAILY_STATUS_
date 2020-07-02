@@ -1,0 +1,37 @@
+1.Write a program that will read a sequence of positive real numbers entered by the user and will print the same numbers in sorted order from smallest to largest. The user will input a zero to mark the end of the input. Assume that at most 100 positive numbers will be entered.
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int[] a = new int[100];
+	    int n,i;
+	    System.out.println("Enter the elements into the array");
+	    for(i=0;i<100;i++)
+	    {
+		    n=sc.nextInt();
+		    if(n==0)
+		        break;
+		    else
+		        a[i]=n;
+	    }
+	    for(int k=0;k<i;k++)
+	    {
+	        for(int j=k+1;j<i;j++)
+	        {
+	            if(a[k]>a[j])
+	            {
+	                int temp=a[k];
+	                a[k]=a[j];
+	                a[j]=temp;
+	            }
+	        }
+	    }
+	    System.out.println("Array after sorting");
+	    for(int k=0;k<i;k++)
+	    {
+	        System.out.print(a[k]+" ");
+	    }
+	}
+}
