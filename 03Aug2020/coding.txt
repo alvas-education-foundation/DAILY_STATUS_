@@ -1,0 +1,13 @@
+1.Check if a triangle of positive area is possible with the given angles
+
+def isTriangleExists(a, b, c):
+    if(a != 0 and b != 0 and c != 0 and (a + b + c)== 180):  
+        if((a + b)>= c or (b + c)>= a or (a + c)>= b):
+            return "YES,triangle of positive area is possible with the given angles"
+        else:
+            return "NO,triangle of positive area is not possible with the given angles"
+    else:
+        return "NO,triangle of positive area is not possible with the given angles"
+# Driver Code
+a, b, c = 50, 70, 60
+print(isTriangleExists(50, 70, 60))
